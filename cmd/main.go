@@ -9,6 +9,7 @@ func main() {
 	reg := registry.MakeRegistry()
 	reg.Register(services.ConcreteAB{})
 	svc, _ := reg.Get("ab")
-	sA := services.ServiceA(svc)
+	sA := svc.(services.ServiceA)
+	sA.Foo()
 
 }

@@ -1,22 +1,22 @@
 package services
 
 type ServiceA interface {
-	foo() int
+	Foo() int
 }
 
 type ServiceB interface {
-	bar() int
+	Bar() int
 }
 
 type ConcreteAB struct {
 	val int
 }
 
-func (c ConcreteAB) foo() int {
+func (c ConcreteAB) Foo() int {
 	return c.val
 }
 
-func (c ConcreteAB) bar() int {
+func (c ConcreteAB) Bar() int {
 	return c.val * c.val
 }
 
