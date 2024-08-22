@@ -25,3 +25,9 @@ func (r *Registry) Get(name string) (any, bool) {
 	entity, found := r.registry[name]
 	return entity, found
 }
+
+func TypedGet[T any](r *Registry, name string) (T, bool) {
+	v, ok := r.Get(name)
+	vRet := v.(T)
+	return vRet, ok
+}
